@@ -17,6 +17,14 @@ simObj[simObj.length]=earthObj;
 simObj[simObj.length]=moonObj;
 simObj[simObj.length]=moonObj2;
 
+//update logic
+function update() {
+  //update objects
+  earthObj.update();
+  moonObj.update();
+  moonObj2.update();
+}
+
 //render the state to the canvas
 function render() {
   //resize canvas
@@ -37,6 +45,7 @@ function run() {
 	setInterval(function(){
 		update();
 		render();
+    renderStatus();
 	}, 10);
 }
 

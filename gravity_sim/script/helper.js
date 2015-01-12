@@ -44,3 +44,11 @@ function getAcc(angle, acceleration) {
 	  acceleration[1]=yAcc;
     return acceleration;
 }
+
+function renderStatus() {
+    //render stats of all objects in simObj
+    for (i=0; i<simObj.length; i++){
+      ctx.font = "30px Arial";
+      ctx.fillText("Xv:"+Math.round(simObj[i].xVelocity)+"  "+"Yv:"+Math.round(simObj[i].yVelocity),500,50+(i*50));
+    }
+}

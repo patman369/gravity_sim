@@ -21,17 +21,11 @@ function planet(x, y, xV, yV, rds, ms, clr) {
   };
 
 	this.render = function () {
-		ctx.beginPath();
+	  //render shape
+	  ctx.beginPath();
 	  ctx.arc(this.xPosition, this.yPosition, this.radius, 0, 2 * Math.PI, false);
 	  ctx.fillStyle = clr;
 	  ctx.fill();
 	};
 }
 
-//update logic
-function update() {
-  //update objects
-  earthObj.update();
-  moonObj.update();
-  moonObj2.update();
-}
