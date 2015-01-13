@@ -16,6 +16,6 @@ canvas.addEventListener('mousemove', function(evt) {
   mouseY = evt.clientY - rect.top;
 });
 
-document.getElementById("clear-button").addEventListener("click", function () {;
+document.getElementById("clear-button").addEventListener("click", function () {
   simObj = [];
 });
