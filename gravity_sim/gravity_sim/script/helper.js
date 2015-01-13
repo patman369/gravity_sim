@@ -1,4 +1,3 @@
-
 function getAngle(xa, ya, xb, yb) {
   var xd = xb - xa;
   var yd = yb - ya;
@@ -9,14 +8,14 @@ function getAngle(xa, ya, xb, yb) {
 
 function calGrav(xa, ya, xb, yb, ma, mb) {
   ma *= 1000;
-	mb *= 1000;
+  mb *= 1000;
   if(xa-xb==0 && ya-yb==0){return 0;}
-	var xd = xb-xa;
-	var yd = yb-ya;
-	var sum = Math.abs(Math.pow(xd,2))+Math.abs(Math.pow(yd,2));
-	var distance = Math.sqrt(sum);
-	var F = G*((ma*mb)/Math.pow(distance,2));
-	var A = (F/ma);
+  var xd = xb-xa;
+  var yd = yb-ya;
+  var sum = Math.abs(Math.pow(xd,2))+Math.abs(Math.pow(yd,2));
+  var distance = Math.sqrt(sum);
+  var F = G*((ma*mb)/Math.pow(distance,2));
+  var A = (F/ma);
   return A;
 }   
 
@@ -24,8 +23,8 @@ function getAcc(angle, acceleration) {
   var acc = acceleration*-1;  
   if(acc==0){
     var acceleration = [];
-	  acceleration[0]=0;
-	  acceleration[1]=0;
+    acceleration[0]=0;
+    acceleration[1]=0;
     return acceleration;
   }
   var a = angle;
@@ -40,15 +39,22 @@ function getAcc(angle, acceleration) {
       yAcc *= -1
     }
     var acceleration = [];
-	  acceleration[0]=xAcc;
-	  acceleration[1]=yAcc;
+    acceleration[0]=xAcc;
+    acceleration[1]=yAcc;
     return acceleration;
 }
 
-function renderStatus() {
+function renderPlanetStatus() {
     //render stats of all objects in simObj
     for (i=0; i<simObj.length; i++){
       ctx.font = "30px Arial";
-      ctx.fillText("Xv:"+Math.round(simObj[i].xVelocity)+"  "+"Yv:"+Math.round(simObj[i].yVelocity),500,50+(i*50));
+      ctx.fillStyle="green";
+      ctx.fillText(simObj[i].name+" "+"Xv:"+Math.round(simObj[i].xVelocity)+"  "+"Yv:"+Math.round(simObj[i].yVelocity*-1),500,50+(i*50));
     }
+}
+ 
+function renderMouseCoord(X, Y) {
+  ctx.font = '18pt Calibri';
+  ctx.fillStyle = 'green';
+  ctx.fillText('Mouse position: ' + X + ',' + Y, 10, 25);
 }

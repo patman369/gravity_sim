@@ -1,5 +1,5 @@
 // object definitions here
-function planet(x, y, xV, yV, rds, ms, clr) {
+function planet(x, y, xV, yV, rds, ms, clr, nm) {
 	this.xPosition=x;
 	this.yPosition=y;
 	this.xVelocity=xV;
@@ -7,9 +7,10 @@ function planet(x, y, xV, yV, rds, ms, clr) {
 	this.mass=ms;
 	this.radius=rds;
 	this.color=clr;
+  this.name=nm;
   
 	this.update = function () { //make this read variables from all of the planet objects and calculate gravity... also fix up the external fixer functions.
-    for (i=0; i < simObj.length; i++) {
+    for (var i=0; i < simObj.length; i++) {
        this.acceleration = calGrav(this.xPosition, this.yPosition, simObj[i].xPosition, simObj[i].yPosition, this.mass, simObj[i].mass);
        this.angle = getAngle(this.xPosition, this.yPosition, simObj[i].xPosition, simObj[i].yPosition); 
        this.acc = getAcc(this.angle, this.acceleration);
@@ -28,4 +29,3 @@ function planet(x, y, xV, yV, rds, ms, clr) {
 	  ctx.fill();
 	};
 }
-

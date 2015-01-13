@@ -1,0 +1,60 @@
+#canvas{
+  position:absolute;
+	border-width: 2px;
+	border-color: grey;
+	border-style: solid;
+}
+
+#input-X {
+  position: absolute;
+  margin-left:810px;
+  margin-top:100px;
+}
+
+#input-Y {
+  position: absolute;
+  margin-left:810px;
+  margin-top:125px;
+}
+
+#input-Xv {
+  position: absolute;
+  margin-left:810px;
+  margin-top:150px;
+}
+
+#input-Yv {
+  position: absolute;
+  margin-left:810px;
+  margin-top:175px;
+}
+
+#input-radius {
+  position: absolute;
+  margin-left:810px;
+  margin-top:200px;
+}
+
+#input-mass {
+  position: absolute;
+  margin-left:810px;
+  margin-top:225px;
+}
+
+#input-color {
+  position: absolute;
+  margin-left:810px;
+  margin-top:250px;
+}
+
+#input-name {
+  position: absolute;
+  margin-left:810px;
+  margin-top:275px;
+}
+
+#submit-button {
+  position: absolute;
+  margin-left:810px;
+  margin-top:300px;
+}
