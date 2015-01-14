@@ -19,3 +19,13 @@ canvas.addEventListener('mousemove', function(evt) {
 document.getElementById("clear-button").addEventListener("click", function () {
   simObj = [];
 });
+
+document.getElementById("zoomIn-button").addEventListener("click", function () {
+  zoomIn();
+});
+
+document.getElementById("zoomOut-button").addEventListener("click", function () {
+  zoomOut();
+});
+
+
