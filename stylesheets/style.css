@@ -64,3 +64,16 @@
   margin-left:810px;
   margin-top:325px;
 }
+
+#zoomIn-button {
+  position: absolute;
+  margin-left:810px;
+  margin-top:350px;
+}
+
+#zoomOut-button {
+  position: absolute;
+  margin-left:810px;
+  margin-top:375px;
+}
+
