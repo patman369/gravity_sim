@@ -5,4 +5,5 @@ TO DO:
 accurate planet mergeing
 creation stack to create multiple planets at once
 input error detection
-rockets?
+saveing/loading of sim states
+rocket ship exploration mode
