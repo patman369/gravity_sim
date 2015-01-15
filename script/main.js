@@ -57,4 +57,4 @@ function run() {
 }
 
 //start and run the game
-run();  //this was coded by Patrick Lockwood and if you steal it you suck.
+run();  //this was coded by Patrick Lockwood
