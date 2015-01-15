@@ -1,3 +1,4 @@
+
 // object definitions here
 function planet(x, y, xV, yV, rds, ms, clr, nm) {
 	this.xPosition=x;
@@ -14,9 +15,9 @@ function planet(x, y, xV, yV, rds, ms, clr, nm) {
 	  	var distance = getDistance(this.xPosition, this.yPosition, simObj[i].xPosition, simObj[i].yPosition);
 	  	if (distance<(this.radius+simObj[i].radius) && distance!=0) {
 	  	  if (this.mass>simObj[i].mass || this.mass==simObj[i].mass) {
-			this.mass += simObj[i].mass;
-			this.radius += Math.sqrt(simObj[i].radius); //check accuracy of merge
-			simObj.remove(i);
+          this.mass += simObj[i].mass;
+          this.radius += Math.sqrt(simObj[i].radius); //check accuracy of merge
+          simObj.remove(i);
 	  	  }
 	  	}
 	  }
