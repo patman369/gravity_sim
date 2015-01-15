@@ -1,5 +1,5 @@
 
-document.getElementById("submit-button").addEventListener("click", function () {;
+document.getElementById("submit-button").addEventListener("click", function () {
   var X = parseInt(document.getElementById("input-X").value);
   var Y = parseInt(document.getElementById("input-Y").value);
   var Xv = parseInt(document.getElementById("input-Xv").value);
@@ -8,7 +8,16 @@ document.getElementById("submit-button").addEventListener("click", function () {
   var mass = parseInt(document.getElementById("input-mass").value);
   var color = document.getElementById("input-color").value;
   var name = document.getElementById("input-name").value;
-  objStack[objStack.length] = new planet(X, Y, Xv, Yv, radius, mass, color, name);
+  
+  var XvIsNaN = isNaN(Xv);
+  var YvIsNaN = isNaN(Yv);
+  var massIsNaN = isNaN(mass);
+  
+  if (X>0 && Y>0 && XvIsNaN===false && YvIsNaN===false && radius>0 && massIsNaN===false ) {
+    objStack[objStack.length] = new planet(X, Y, Xv, Yv, radius, mass, color, name);
+  }else{
+    alert("Please input proper variable types");
+  }
 });
     
 canvas.addEventListener('mousemove', function(evt) {
@@ -41,4 +50,6 @@ document.getElementById("zoomOut-button").addEventListener("click", function () 
 document.getElementById("init-button").addEventListener("click", function () {
   stackToSim();
 });
+
+
 
