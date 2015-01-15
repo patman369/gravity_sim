@@ -88,3 +88,24 @@ function stackToSim() {
   }
   objStack = [];
 }
+
+function save() {
+  var stack = JSON.stringify(objStack);
+  prompt("Copy this and save it somewhere |you can edit the JSON text also|", stack);
+}
+
+function load() {
+  var newStack = prompt("Please paste the stack JSON text:");
+  var stack = JSON.parse(newStack);
+  for (var i=0; i<stack.length; i++) {
+    var x = stack[i].xPosition;
+    var y = stack[i].yPosition;
+    var xv = stack[i].xVelocity;
+    var yv = stack[i].yVelocity;
+    var m = stack[i].mass;
+    var r = stack[i].radius;
+    var c = stack[i].color;
+    var n = stack[i].name;
+    objStack[objStack.length] = new planet(x, y, xv, yv, r, m, c, n);
+  }
+}
