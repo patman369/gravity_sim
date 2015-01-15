@@ -77,3 +77,14 @@
   margin-top:375px;
 }
 
+#init-button {
+  position: absolute;
+  margin-left:810px;
+  margin-top:560px;
+}
+
+#stack {
+  position: absolute;
+  margin-left:810px;
+  margin-top:400px;
+}
