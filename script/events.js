@@ -17,8 +17,17 @@ canvas.addEventListener('mousemove', function(evt) {
   mouseY = evt.clientY - rect.top;
 });
 
+document.getElementById("save").addEventListener("click", function () {
+  save();
+});
+
+document.getElementById("load").addEventListener("click", function () {
+  load();
+});
+
 document.getElementById("clear-button").addEventListener("click", function () {
   simObj = [];
+  objStack = [];
 });
 
 document.getElementById("zoomIn-button").addEventListener("click", function () {
