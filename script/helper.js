@@ -56,7 +56,7 @@ function renderPlanetStatus() {
     for (var i=0; i<simObj.length; i++){
       ctx.font = "15px Arial";
       ctx.fillStyle="green";
-      ctx.fillText(simObj[i].name+" "+"Mass: "+simObj[i].mass+" "+"Xv:"+Math.round(simObj[i].xVelocity)+"  "+"Yv:"+Math.round(simObj[i].yVelocity*-1),500,25+(i*16));
+      ctx.fillText(simObj[i].name+" "+"Mass: "+simObj[i].mass+" "+"Xv:"+Math.round(simObj[i].xVelocity)+"  "+"Yv:"+Math.round(simObj[i].yVelocity*-1)+" "+simObj[i].radius,500,25+(i*16));
     }
 }
  
