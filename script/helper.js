@@ -1,3 +1,4 @@
+
 function getAngle(xa, ya, xb, yb) {
   var xd = xb - xa;
   var yd = yb - ya;
@@ -52,7 +53,7 @@ Array.prototype.remove = function(from, to) {
 
 function renderPlanetStatus() {
     //render stats of all objects in simObj
-    for (i=0; i<simObj.length; i++){
+    for (var i=0; i<simObj.length; i++){
       ctx.font = "15px Arial";
       ctx.fillStyle="green";
       ctx.fillText(simObj[i].name+" "+"Mass: "+simObj[i].mass+" "+"Xv:"+Math.round(simObj[i].xVelocity)+"  "+"Yv:"+Math.round(simObj[i].yVelocity*-1),500,25+(i*16));
@@ -60,9 +61,16 @@ function renderPlanetStatus() {
 }
  
 function renderMouseCoord(X, Y) {
-  ctx.font = '18pt Calibri';
+  ctx.font = '18pt Arial';
   ctx.fillStyle = 'green';
   ctx.fillText('Mouse position: ' + X*METERS_PER_PIXEL + ',' + Y*METERS_PER_PIXEL, 10, 25);
+}
+
+function updateStack() {
+  document.getElementById('stack').innerHTML = "";
+  for (var i=0; i<objStack.length; i++){
+    document.getElementById('stack').innerHTML += objStack[i].name + "&#13;";
+  }
 }
 
 function zoomIn() {
@@ -72,4 +80,11 @@ function zoomIn() {
 }
 function zoomOut() {
   METERS_PER_PIXEL += 1;
+}
+
+function stackToSim() {
+  for (var i=0; i<objStack.length; i++) {
+    simObj[simObj.length] = objStack[i];
+  }
+  objStack = [];
 }
