@@ -5,6 +5,18 @@
 	border-style: solid;
 }
 
+#save {
+  position: absolute;
+  margin-left:810px;
+  margin-top:75px;
+}
+
+#load {
+  position: absolute;
+  margin-left:860px;
+  margin-top:75px;
+}
+
 #input-X {
   position: absolute;
   margin-left:810px;
@@ -77,14 +89,14 @@
   margin-top:375px;
 }
 
-#init-button {
-  position: absolute;
-  margin-left:810px;
-  margin-top:575px;
-}
-
 #stack {
   position: absolute;
   margin-left:810px;
   margin-top:400px;
+}
+
+#init-button {
+  position: absolute;
+  margin-left:810px;
+  margin-top:575px;
 }
