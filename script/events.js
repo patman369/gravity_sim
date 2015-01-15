@@ -1,3 +1,4 @@
+
 document.getElementById("submit-button").addEventListener("click", function () {;
   var X = parseInt(document.getElementById("input-X").value);
   var Y = parseInt(document.getElementById("input-Y").value);
@@ -7,7 +8,7 @@ document.getElementById("submit-button").addEventListener("click", function () {
   var mass = parseInt(document.getElementById("input-mass").value);
   var color = document.getElementById("input-color").value;
   var name = document.getElementById("input-name").value;
-  simObj[simObj.length] = new planet(X, Y, Xv, Yv, radius, mass, color, name);
+  objStack[objStack.length] = new planet(X, Y, Xv, Yv, radius, mass, color, name);
 });
     
 canvas.addEventListener('mousemove', function(evt) {
@@ -28,4 +29,7 @@ document.getElementById("zoomOut-button").addEventListener("click", function () 
   zoomOut();
 });
 
+document.getElementById("init-button").addEventListener("click", function () {
+  stackToSim();
+});
 
