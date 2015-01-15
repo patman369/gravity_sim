@@ -6,19 +6,22 @@
 var G=0.0000000000667384;
 var WIDTH = 800;
 var HEIGHT = 600;
+var METERS_PER_PIXEL = 1;
 var pi=Math.PI;
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var mouseX, mouseY;
 var simObj = [];
-var METERS_PER_PIXEL = 1;
+var objStack = [];
 
-simObj[simObj.length] = new planet(250, 200, -5, 0, 10, 100000000000, 'green', "earth1");
-simObj[simObj.length] = new planet(250, 250, 5, 0, 10, 100000000000, 'green', "earth2");
-simObj[simObj.length] = new planet(250, 150, 0, 0, 5, 100, 'grey', "moon1");
+objStack[objStack.length] = new planet(250, 200, -5, 0, 10, 100000000000, 'green', "earth1");
+objStack[objStack.length] = new planet(250, 250, 5, 0, 10, 100000000000, 'green', "earth2");
+objStack[objStack.length] = new planet(250, 150, 0, 0, 5, 100, 'grey', "moon1");
 
 //update logic
 function update() {
+  //update stack
+  updateStack();
   //update objects
   for (var i=0; i<simObj.length; i++){
     simObj[i].update();
