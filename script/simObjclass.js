@@ -8,15 +8,17 @@ function planet(x, y, xV, yV, rds, ms, clr, nm) {
 	this.mass=ms;
 	this.radius=rds;
 	this.color=clr;
-    this.name=nm;
+  this.name=nm;
 
   	this.detectCircleCollision = function() {
 	  for (var i=0; i < simObj.length; i++) {
 	  	var distance = getDistance(this.xPosition, this.yPosition, simObj[i].xPosition, simObj[i].yPosition);
 	  	if (distance<(this.radius+simObj[i].radius) && distance!=0) {
-	  	  if (this.mass>simObj[i].mass || this.mass==simObj[i].mass) {
+	  	  if (this.mass>simObj[i].mass || this.mass==simObj[i].mass) { //figuer out solution besides "mass equal to mass"
+          this.xVelocity += (simObj[i].mass*simObj[i].xVelocity)/this.mass;
+          this.yVelocity += (simObj[i].mass*simObj[i].yVelocity)/this.mass;
           this.mass += simObj[i].mass;
-          this.radius += Math.sqrt(simObj[i].radius); //check accuracy of merge
+          this.radius = Math.sqrt(((Math.PI*(this.radius*this.radius))+(Math.PI*(simObj[i].radius*simObj[i].radius)))/Math.PI);
           simObj.remove(i);
 	  	  }
 	  	}
