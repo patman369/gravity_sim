@@ -10,6 +10,7 @@ var METERS_PER_PIXEL = 1;
 var pi=Math.PI;
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+//global variables
 var mouseX, mouseY;
 var simObj = [];
 var objStack = [];
@@ -52,7 +53,6 @@ function run() {
   setInterval(function(){
     update();
     render();
-    writeMessage();
   }, 10);
 }
 
