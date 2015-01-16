@@ -51,5 +51,10 @@ document.getElementById("init-button").addEventListener("click", function () {
   stackToSim();
 });
 
+document.getElementById("canvas").addEventListener("click", function () {
+  document.getElementById("input-X").value = mouseX*METERS_PER_PIXEL;
+  document.getElementById("input-Y").value = mouseY*METERS_PER_PIXEL;
+});
+
 
 
